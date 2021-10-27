@@ -7,12 +7,12 @@ const Effect = () => {
     // useEffect - это ассинхронный хук!
 
     // можно помечать в комментариях для чего этот useEffect, например componentDidMount
-    useEffect(() => {
-        const handler = (event) => console.log(event.target);
-        document.addEventListener('click', handler);
-
-        return () => document.removeEventListener('click', handler);
-    }, []);
+    // useEffect(() => {
+    //     const handler = (event) => console.log(event.target);
+    //     document.addEventListener('click', handler);
+    //
+    //     return () => document.removeEventListener('click', handler);
+    // }, []);
 
     // а можно использовать именованную функцию
     useEffect(function componentDidMountForSomePlugin() {

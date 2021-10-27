@@ -4,6 +4,7 @@ import Context from "../context";
 import LayoutEffect from "../layoutEffect";
 import Callback from "../callback";
 import Reducer from "../myReducer";
+import {UsePrevious} from "../useHooks";
 
 import Books from "../books";
 
@@ -22,6 +23,8 @@ export default function App() {
             <LayoutEffect />
             <Callback />
             <Reducer />
+
+            <UsePrevious />
         </>
     );
 }
