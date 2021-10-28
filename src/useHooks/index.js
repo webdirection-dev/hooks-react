@@ -1,3 +1,5 @@
-import {UsePrevious} from "./usePrevious";
+import {MyUsePrevious} from "./usePrevious";
 
-export {UsePrevious};
+export {
+    MyUsePrevious
+};

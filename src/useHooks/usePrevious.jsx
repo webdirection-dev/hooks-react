@@ -1,7 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useRef, useEffect} from "react";
 
-const UsePrevious = () => {
+const MyUsePrevious = () => {
     const [count, setCount] = useState(0);
+
+
+    const prevCount = usePrevious(count);
 
     return(
         <div>
@@ -9,8 +12,8 @@ const UsePrevious = () => {
             <button
                 onClick={() => setCount(count + 1)}
             >Update</button>
-            <h3>{count}</h3>
-            <h3>prevCount:</h3>
+            <h3>current: {count}</h3>
+            <h3>prevCount: {prevCount}</h3>
             <br/>
             <br/>
             <br/>
@@ -19,4 +22,13 @@ const UsePrevious = () => {
     )
 };
 
-export {UsePrevious};
+export {MyUsePrevious};
+
+function usePrevious(value) {
+    const ref = useRef(); // {current: null}
+    useEffect(() => {
+        ref.current = value;
+    });
+
+    return ref.current
+}
